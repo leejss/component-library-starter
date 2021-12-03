@@ -9,6 +9,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
   input: './src/index.ts',
@@ -37,6 +38,9 @@ export default defineConfig({
       babelHelpers: 'runtime',
       exclude: 'node_modules',
       extensions: ['.ts', '.tsx'],
+    }),
+    postcss({
+      extract: true,
     }),
     url(),
     svgr(),

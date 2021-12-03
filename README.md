@@ -13,5 +13,4 @@
 
 - Rollup
 - Babel
-
-## Styling 
+- PostCSS
