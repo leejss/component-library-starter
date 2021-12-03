@@ -15,5 +15,3 @@
 - Babel
 
 ## Styling 
-
-- emotion

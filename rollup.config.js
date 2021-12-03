@@ -8,6 +8,7 @@ import babel from '@rollup/plugin-babel';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
+import typescript from '@rollup/plugin-typescript';
 
 export default defineConfig({
   input: './src/index.ts',
@@ -27,6 +28,9 @@ export default defineConfig({
     externals({ deps: true }),
     nodeResolve({
       extensions: ['.js', '.ts', '.tsx'],
+    }),
+    typescript({
+      tsconfig: './tsconfig.json',
     }),
     cjs(),
     babel({
